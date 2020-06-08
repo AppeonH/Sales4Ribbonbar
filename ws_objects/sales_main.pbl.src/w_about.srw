@@ -3,6 +3,8 @@ $PBExportComments$About box for examples
 forward
 global type w_about from window
 end type
+type cb_1 from commandbutton within w_about
+end type
 type st_4 from statictext within w_about
 end type
 type st_3 from statictext within w_about
@@ -25,6 +27,7 @@ windowtype windowtype = response!
 long backcolor = 32039904
 toolbaralignment toolbaralignment = alignatleft!
 boolean center = true
+cb_1 cb_1
 st_4 st_4
 st_3 st_3
 st_1 st_1
@@ -54,17 +57,20 @@ Integer	ii_Cntr
 end variables
 
 on w_about.create
+this.cb_1=create cb_1
 this.st_4=create st_4
 this.st_3=create st_3
 this.st_1=create st_1
 this.st_2=create st_2
-this.Control[]={this.st_4,&
+this.Control[]={this.cb_1,&
+this.st_4,&
 this.st_3,&
 this.st_1,&
 this.st_2}
 end on
 
 on w_about.destroy
+destroy(this.cb_1)
 destroy(this.st_4)
 destroy(this.st_3)
 destroy(this.st_1)
@@ -83,6 +89,21 @@ ld_Today	=	Today()
 st_3.Text = "Copyright (c) 2000-"+String(ld_Today,"YYYY")+" Appeon Corporation."
 //addition end
 end event
+
+type cb_1 from commandbutton within w_about
+integer x = 128
+integer y = 588
+integer width = 402
+integer height = 112
+integer taborder = 10
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+string text = "none"
+end type
 
 type st_4 from statictext within w_about
 integer x = 73
