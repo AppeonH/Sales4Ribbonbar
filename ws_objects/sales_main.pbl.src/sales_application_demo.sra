@@ -104,6 +104,7 @@ OPEN(w_logon)
 //End If
 //
 //OPEN(w_mdi)
+//000
 end event
 
 event close;Disconnect using SQLCA;
