@@ -109,6 +109,6 @@ OPEN(w_logon)
 end event
 
 event close;Disconnect using SQLCA;
-//
+//00
 end event
 
